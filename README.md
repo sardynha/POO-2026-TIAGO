@@ -21,13 +21,16 @@ e crie a ListaVetor genéricas.
 4) Classe ListaEncadeada:
    
 i. Crie o método add(valor, int pos): adiciona um valor (tipo genérico) na posição,
-considere as posições de 0 a tamanho-1. Caso se passe um valor fora do intervalo
-lance uma IllegalArgumentException com uma mensagem. Bônus: faça com que o
-método add(valor) que adiciona no final, chame esse método para evitar lógicas
-duplicadas.
+considere as posições de 0 a tamanho -1.
+
+Caso se passe um valor fora do intervalo lance uma IllegalArgumentException com uma mensagem. 
+Bônus: faça com que o método add(valor) que adiciona no final, chame esse método 
+para evitar lógicas duplicadas.
+
 ii. Crie o método remove(int pos): remove e retorna um elemento na posição passada por
 parâmetro (não esqueça de decrementar o tamanho). Caso o parâmetro seja fora do
 intervalo de posições lance uma IllegalArgumentException.
+
 iii. Crie o método remove(valor): que remove o valor (tipo genérico) passado por
 parâmetro. Retorne um boolean que informa se removeu algum elemento ou não da
 lista.
