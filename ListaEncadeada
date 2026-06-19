@@ -97,5 +97,42 @@ public class ListaEncadeada <E> implements Lista<E> {
 		return aux;
 	}
 
+    //oq queremos inserir, e onde queremos inserir
+    @Override 
+    public void add(E info, int pos) {
+
+        if(pos < 0 || pos > this.tamanho) {
+        //diferente do outro pq estamos adicionando
+    throw new IllegalArgumentException("Posição inválida!");
+    }
+    
+        No novo = new No(info);
+
+        //inicio
+        if (pos == 0) {
+
+        novo.prox = this.inicio;
+        this.inicio = novo;
+        
+        if(this.tamanho == 0) 
+        this.fim = novo;
+
+        this.tamanho++;
+        return;
+}
+        //final
+        if (pos == this.tamanho) {
+        this.add(info);
+        return;
+        }
+
+        //meio
+        No anterior = getNodo(pos-1);
+        novo.prox = anterior.prox;
+        anterior.prox = novo;
+        
+        this.tamanho++;
+    }
+    
     
 }
