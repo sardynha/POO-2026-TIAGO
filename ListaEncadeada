@@ -105,7 +105,7 @@ public class ListaEncadeada <E> implements Lista<E> {
         //diferente do outro pq estamos adicionando
     throw new IllegalArgumentException("Posição inválida!");
     }
-    
+
         No novo = new No(info);
 
         //inicio
@@ -133,6 +133,40 @@ public class ListaEncadeada <E> implements Lista<E> {
         
         this.tamanho++;
     }
-    
-    
+
+    @Override 
+    public boolean remove(E valor) {
+        if(this.tamanho == 0) 
+            return false;
+        
+        //remover no inicio
+        if(this.inicio.info.equals(valor))  {
+        this.inicio = this.inicio.prox;
+
+        if(this.tamanho == 1) 
+        this.fim = null;
+
+        this.tamanho--;
+        return true;
+    }
+        No atual = this.inicio;
+
+    while(atual.prox != null) {
+
+        if(atual.prox.info.equals(valor)) {
+
+            atual.prox = atual.prox.prox;
+
+            if(atual.prox == null)
+                this.fim = atual;
+
+            this.tamanho--;
+            return true;
+        }
+
+        atual = atual.prox;
+    }
+
+    return false;
+    }
 }
